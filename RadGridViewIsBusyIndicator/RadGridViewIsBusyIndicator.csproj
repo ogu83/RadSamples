@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-09-30-125742-2f244b2c" />
+    <PackageReference Include="OpenSilver.Compatibility.TelerikUI.4.6" Version="3.1.0-private-2024-09-23-012037-2c53ac2f" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="INotifyDataErrorInfoEx.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="NotifyPropertyAndErrorBase.cs" />
+    <Compile Include="NotifyPropertyChangedBase.cs" />
+    <Compile Include="ValidationError.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="OpenSilver.Compatibility.TelerikUI.license.json" />
+  </ItemGroup>
+
+</Project>

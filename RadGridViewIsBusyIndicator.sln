@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator.Browser", "RadGridViewIsBusyIndicator.Browser\RadGridViewIsBusyIndicator.Browser.csproj", "{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator", "RadGridViewIsBusyIndicator\RadGridViewIsBusyIndicator.csproj", "{336D8293-5F5D-4AE1-A675-108A600138BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator.Simulator", "RadGridViewIsBusyIndicator.Simulator\RadGridViewIsBusyIndicator.Simulator.csproj", "{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336D8293-5F5D-4AE1-A675-108A600138BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336D8293-5F5D-4AE1-A675-108A600138BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336D8293-5F5D-4AE1-A675-108A600138BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336D8293-5F5D-4AE1-A675-108A600138BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8386970-3992-4C57-AAF8-6DB9C269B1E6}
+	EndGlobalSection
+EndGlobal

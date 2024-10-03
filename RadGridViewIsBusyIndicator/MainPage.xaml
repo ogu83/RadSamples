@@ -1,0 +1,51 @@
+﻿<Page x:Class="RadGridViewIsBusyIndicator.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RadGridViewIsBusyIndicator"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d">
+    <Page.Resources>
+ 
+    </Page.Resources>
+    
+    <Grid>
+        <t:RadGridView x:Name="StopsGridView"
+                 ItemsSource="{Binding ItemsView}"
+                 ColumnWidth="Auto"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 EnableColumnVirtualization="True"
+                 RowIndicatorVisibility="Collapsed"
+                 ShowGroupPanel="False"
+                 AutoGenerateColumns="False"
+                 CanUserFreezeColumns="True"
+                 CanUserInsertRows="False"
+                 CanUserDeleteRows="False"
+                 RowDetailsVisibilityMode="Collapsed"                 
+                 ValidatesOnDataErrors="InViewMode">
+            <t:RadGridView.Columns>
+                <t:GridViewDataColumn Header="Arrival Date"
+                            DataMemberBinding="{Binding Path=StpArrivalDate, Mode=TwoWay, StringFormat='{}{0:MM/dd/yy HH:mm}'}"
+                            Width="Auto"
+                            IsFilterable="False"
+                            IsResizable="False"
+                            SortingState="Ascending">
+                    <t:GridViewDataColumn.CellEditTemplate>
+                        <DataTemplate>
+                            <t:RadMaskedDateTimeInput Value="{Binding Path=StpArrivalDate, Mode=TwoWay}"
+                                      Mask="MM/dd/yy HH:mm"
+                                      IsClearButtonVisible="False"
+                                      AcceptsReturn="False"
+                                      UpdateValueEvent="LostFocus" />
+                        </DataTemplate>
+                    </t:GridViewDataColumn.CellEditTemplate>
+                </t:GridViewDataColumn>
+            </t:RadGridView.Columns>
+
+        </t:RadGridView>
+        
+    </Grid>
+
+</Page>
