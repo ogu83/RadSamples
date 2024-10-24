@@ -5,60 +5,50 @@
       xmlns:local="clr-namespace:RadGridViewIsBusyIndicator"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:StyleSelectors="clr-namespace:KAG.OCScreen.Utility.StyleSelectors"
       mc:Ignorable="d">
     <Page.Resources>
-        <Style x:Key="ReadOnlyTextBox"
-           TargetType="TextBox"
-           t:StyleManager.BasedOn="Office_Blue">
-            <Setter Property="Background"
-                Value="GhostWhite" />
-            <Setter Property="IsTabStop"
-                Value="False" />
-            <Setter Property="Margin"
-                Value="0,1" />
-            <Setter Property="local:TextBoxExtensions.BlockKeyInput" Value="True" />
+        
+        <Style x:Key="SplashBlendStyle"
+               TargetType="t:GridViewCell">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         Opacity=".75">
+                        <GradientStop Color="AntiqueWhite"
+                                      Offset="0" />
+                        <GradientStop Color="#FF00FF00"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
+        
+        <Style x:Key="DeletedStyle"
+           TargetType="t:GridViewCell">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0,1"
+                                     Opacity=".75">
+                        <GradientStop Color="AntiqueWhite"
+                                  Offset="0" />
+                        <GradientStop Color="Brown"
+                                  Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="UndeletedStyle"
+           TargetType="t:GridViewCell" />
+        
+        <StyleSelectors:CommodityCellStyleSelector x:Key="commodityCellStyleSelector"
+                                                   DeletedStyle="{StaticResource DeletedStyle}"
+                                                   UndeletedStyle="{StaticResource UndeletedStyle}"
+                                                   SplashBlendStyle="{StaticResource SplashBlendStyle}" />
     </Page.Resources>
 
     <Grid>
-        <!--<t:RadGridView x:Name="StopsGridView"
-                 ItemsSource="{Binding ItemsView}"
-                 ColumnWidth="Auto"
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Stretch"
-                 EnableColumnVirtualization="True"
-                 RowIndicatorVisibility="Collapsed"
-                 ShowGroupPanel="False"
-                 AutoGenerateColumns="False"
-                 CanUserFreezeColumns="True"
-                 CanUserInsertRows="False"
-                 CanUserDeleteRows="False"
-                 RowDetailsVisibilityMode="Collapsed"                 
-                 ValidatesOnDataErrors="InViewMode">
-            <t:RadGridView.Columns>
-                <t:GridViewDataColumn Header="Arrival Date"
-                            DataMemberBinding="{Binding Path=StpArrivalDate, Mode=TwoWay, StringFormat='{}{0:MM/dd/yy HH:mm}'}"
-                            Width="Auto"
-                            IsFilterable="False"
-                            IsResizable="False"
-                            SortingState="Ascending">
-                    <t:GridViewDataColumn.CellEditTemplate>
-                        <DataTemplate>
-                            <t:RadMaskedDateTimeInput Value="{Binding Path=StpArrivalDate, Mode=TwoWay}"
-                                      Mask="MM/dd/yy HH:mm"
-                                      IsClearButtonVisible="False"
-                                      AcceptsReturn="False"
-                                      UpdateValueEvent="" />
-                        </DataTemplate>
-                    </t:GridViewDataColumn.CellEditTemplate>
-                </t:GridViewDataColumn>
-            </t:RadGridView.Columns>
-        </t:RadGridView>-->
-        <!--<StackPanel>
-            <TextBox Style="{StaticResource ReadOnlyTextBox}" IsHitTestVisible="False" />
-            <TextBox Style="{StaticResource ReadOnlyTextBox}" Text="This is Readonly" />
-        </StackPanel>-->
-
         <t:RadTreeListView x:Name="CommodityGridView"
                        ItemsSource="{Binding Path=ParentLines, Mode=TwoWay}"
                        ColumnWidth="Auto"
