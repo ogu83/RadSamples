@@ -7,11 +7,21 @@
       xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
       mc:Ignorable="d">
     <Page.Resources>
- 
+        <Style x:Key="ReadOnlyTextBox"
+           TargetType="TextBox"
+           t:StyleManager.BasedOn="Office_Blue">
+            <Setter Property="Background"
+                Value="GhostWhite" />
+            <Setter Property="IsTabStop"
+                Value="False" />
+            <Setter Property="Margin"
+                Value="0,1" />
+            <Setter Property="local:TextBoxExtensions.BlockKeyInput" Value="True" />
+        </Style>
     </Page.Resources>
-    
+
     <Grid>
-        <t:RadGridView x:Name="StopsGridView"
+        <!--<t:RadGridView x:Name="StopsGridView"
                  ItemsSource="{Binding ItemsView}"
                  ColumnWidth="Auto"
                  HorizontalAlignment="Stretch"
@@ -38,14 +48,45 @@
                                       Mask="MM/dd/yy HH:mm"
                                       IsClearButtonVisible="False"
                                       AcceptsReturn="False"
-                                      UpdateValueEvent="LostFocus" />
+                                      UpdateValueEvent="" />
                         </DataTemplate>
                     </t:GridViewDataColumn.CellEditTemplate>
                 </t:GridViewDataColumn>
             </t:RadGridView.Columns>
+        </t:RadGridView>-->
+        <!--<StackPanel>
+            <TextBox Style="{StaticResource ReadOnlyTextBox}" IsHitTestVisible="False" />
+            <TextBox Style="{StaticResource ReadOnlyTextBox}" Text="This is Readonly" />
+        </StackPanel>-->
 
-        </t:RadGridView>
-        
+        <t:RadTreeListView x:Name="CommodityGridView"
+                       ItemsSource="{Binding Path=ParentLines, Mode=TwoWay}"
+                       ColumnWidth="Auto"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       EnableColumnVirtualization="True"
+                       RowIndicatorVisibility="Collapsed"
+                       ShowGroupPanel="False"
+                       AutoGenerateColumns="False"
+                       CanUserFreezeColumns="False"
+                       CanUserInsertRows="False"
+                       CanUserDeleteRows="False"
+                       ValidatesOnDataErrors="InViewMode">
+            <t:RadTreeListView.Columns>
+                <t:GridViewDataColumn Header="Gross"
+                                  DataMemberBinding="{Binding Path=FgtQuantity, Mode=TwoWay}"
+                                  Width="05"
+                                  MinWidth="50"
+                                  IsFilterable="False"
+                                  CellStyleSelector="{StaticResource commodityCellStyleSelector}" />
+                <t:GridViewDataColumn Header="Net"
+                                  DataMemberBinding="{Binding Path=FgtVolume2, Mode=TwoWay}"
+                                  Width="50"
+                                  MinWidth="50"
+                                  IsFilterable="False"
+                                  CellStyleSelector="{StaticResource commodityCellStyleSelector}" />
+            </t:RadTreeListView.Columns>
+        </t:RadTreeListView>
+
     </Grid>
-
 </Page>
