@@ -40,6 +40,54 @@ namespace KAG.OCScreen.Utility.StyleSelectors
 
 namespace RadGridViewIsBusyIndicator
 {
+    public static class GridViewTextSelectionBehavior
+    {
+        public static readonly DependencyProperty EnableTextSelectionProperty =
+            DependencyProperty.RegisterAttached(
+                "EnableTextSelection",
+                typeof(bool),
+                typeof(GridViewTextSelectionBehavior),
+                new PropertyMetadata(false, OnEnableTextSelectionChanged));
+
+        public static bool GetEnableTextSelection(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(EnableTextSelectionProperty);
+        }
+
+        public static void SetEnableTextSelection(DependencyObject obj, bool value)
+        {
+            obj.SetValue(EnableTextSelectionProperty, value);
+        }
+
+        private static void OnEnableTextSelectionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is RadTreeListView gridView)
+            {
+                if ((bool)e.NewValue)
+                {
+                    gridView.PreparingCellForEdit += GridView_PreparingCellForEdit;
+                }
+                else
+                {
+                    gridView.PreparingCellForEdit -= GridView_PreparingCellForEdit;
+                }
+            }
+        }
+
+        private static void GridView_PreparingCellForEdit(object sender, GridViewPreparingCellForEditEventArgs e)
+        {
+            if (e.EditingElement is TextBox textBox)
+            {
+                // Select all text inside the TextBox when editing begins.
+                textBox.Dispatcher.BeginInvoke(() =>
+                {
+                    textBox.Focus();
+                    textBox.SelectAll();
+                });
+            }
+        }
+    }
+
     [Flags]
     public enum ModelState
     {
@@ -137,19 +185,6 @@ namespace RadGridViewIsBusyIndicator
                 new FreightParentLineModel { FgtQuantity = 20, FgtVolume2 = 200 },
             };
             InitializeComponent();
-        }
-
-        private void CommodityGridView_PreparingCellForEdit(object sender, GridViewPreparingCellForEditEventArgs e)
-        {
-            if (e.EditingElement is TextBox textBox)
-            {
-                // Select all text inside the TextBox when editing begins.
-                Dispatcher.BeginInvoke(() =>
-                {
-                    textBox.Focus();
-                    textBox.SelectAll();
-                });
-            }
         }
     }
 }

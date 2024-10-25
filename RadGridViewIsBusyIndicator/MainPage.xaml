@@ -51,7 +51,7 @@
     <Grid>
         <t:RadTreeListView x:Name="CommodityGridView"
                        ItemsSource="{Binding Path=ParentLines, Mode=TwoWay}"
-                            PreparingCellForEdit="CommodityGridView_PreparingCellForEdit"
+                       local:GridViewTextSelectionBehavior.EnableTextSelection="True"
                        ColumnWidth="Auto"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
