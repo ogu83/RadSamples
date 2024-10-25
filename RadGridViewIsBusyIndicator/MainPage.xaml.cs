@@ -138,5 +138,18 @@ namespace RadGridViewIsBusyIndicator
             };
             InitializeComponent();
         }
+
+        private void CommodityGridView_PreparingCellForEdit(object sender, GridViewPreparingCellForEditEventArgs e)
+        {
+            if (e.EditingElement is TextBox textBox)
+            {
+                // Select all text inside the TextBox when editing begins.
+                Dispatcher.BeginInvoke(() =>
+                {
+                    textBox.Focus();
+                    textBox.SelectAll();
+                });
+            }
+        }
     }
 }

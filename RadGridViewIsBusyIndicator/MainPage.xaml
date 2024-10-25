@@ -51,6 +51,7 @@
     <Grid>
         <t:RadTreeListView x:Name="CommodityGridView"
                        ItemsSource="{Binding Path=ParentLines, Mode=TwoWay}"
+                            PreparingCellForEdit="CommodityGridView_PreparingCellForEdit"
                        ColumnWidth="Auto"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
