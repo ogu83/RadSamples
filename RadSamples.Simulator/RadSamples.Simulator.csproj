@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RadGridViewIsBusyIndicator\RadGridViewIsBusyIndicator.csproj" />
+    <ProjectReference Include="..\RadSamples\RadSamples.csproj" />
   </ItemGroup>
 
 </Project>

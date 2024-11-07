@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator.Browser", "RadGridViewIsBusyIndicator.Browser\RadGridViewIsBusyIndicator.Browser.csproj", "{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadSamples.Browser", "RadSamples.Browser\RadSamples.Browser.csproj", "{8C3AE205-BDB9-4D4E-A9D1-FCAB9C0366E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator", "RadGridViewIsBusyIndicator\RadGridViewIsBusyIndicator.csproj", "{336D8293-5F5D-4AE1-A675-108A600138BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadSamples", "RadSamples\RadSamples.csproj", "{336D8293-5F5D-4AE1-A675-108A600138BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadGridViewIsBusyIndicator.Simulator", "RadGridViewIsBusyIndicator.Simulator\RadGridViewIsBusyIndicator.Simulator.csproj", "{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadSamples.Simulator", "RadSamples.Simulator\RadSamples.Simulator.csproj", "{4B1DBBE4-2A1C-4A7F-8EC8-03A9D0F973EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
