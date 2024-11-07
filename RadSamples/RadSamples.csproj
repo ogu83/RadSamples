@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-31-140659-468b0c84" />
     <PackageReference Include="OpenSilver.Compatibility.TelerikUI.4.6" Version="3.1.0-private-2024-09-23-012037-2c53ac2f" />
+    <PackageReference Include="OpenSilver.TelerikUI.Themes.Office_Blue" Version="3.1.0-private-2024-10-25-012037-2c53ac2f" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,9 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RadWindow1.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -26,11 +30,18 @@
     <Compile Include="MainPage.xaml.cs" />
     <Compile Include="NotifyPropertyAndErrorBase.cs" />
     <Compile Include="NotifyPropertyChangedBase.cs" />
+    <Compile Include="RadWindow1.xaml.cs" />
+    <Compile Include="ScrollOrdersModelRequest.cs" />
+    <Compile Include="ScrollOrdersViewModel.cs" />
     <Compile Include="ValidationError.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="OpenSilver.Compatibility.TelerikUI.license.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="RadWindow1.xaml" />
   </ItemGroup>
 
 </Project>

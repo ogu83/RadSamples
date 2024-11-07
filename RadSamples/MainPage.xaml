@@ -5,79 +5,22 @@
       xmlns:local="clr-namespace:RadGridViewIsBusyIndicator"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
-      xmlns:StyleSelectors="clr-namespace:KAG.OCScreen.Utility.StyleSelectors"
       mc:Ignorable="d">
     <Page.Resources>
-        
-        <Style x:Key="SplashBlendStyle"
-               TargetType="t:GridViewCell">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="0,1"
-                                         Opacity=".75">
-                        <GradientStop Color="AntiqueWhite"
-                                      Offset="0" />
-                        <GradientStop Color="#FF00FF00"
-                                      Offset="1" />
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        
-        <Style x:Key="DeletedStyle"
-           TargetType="t:GridViewCell">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="0,1"
-                                     Opacity=".75">
-                        <GradientStop Color="AntiqueWhite"
-                                  Offset="0" />
-                        <GradientStop Color="Brown"
-                                  Offset="1" />
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="UndeletedStyle"
-           TargetType="t:GridViewCell" />
-        
-        <StyleSelectors:CommodityCellStyleSelector x:Key="commodityCellStyleSelector"
-                                                   DeletedStyle="{StaticResource DeletedStyle}"
-                                                   UndeletedStyle="{StaticResource UndeletedStyle}"
-                                                   SplashBlendStyle="{StaticResource SplashBlendStyle}" />
+        <Style TargetType="TextBox"
+           t:StyleManager.BasedOn="Office_Blue" />
+        <Style x:Key="TextBoxStyle"
+           TargetType="TextBox"
+           t:StyleManager.BasedOn="Office_Blue" />
+        <Style TargetType="Button"
+           t:StyleManager.BasedOn="Office_Blue" />
+        <Style TargetType="RadioButton"
+           t:StyleManager.BasedOn="Office_Blue" />
+        <Style TargetType="TextBlock"
+           t:StyleManager.BasedOn="Office_Blue" />
     </Page.Resources>
-
     <Grid>
-        <t:RadTreeListView x:Name="CommodityGridView"
-                       ItemsSource="{Binding Path=ParentLines, Mode=TwoWay}"
-                       local:GridViewTextSelectionBehavior.EnableTextSelection="True"
-                       ColumnWidth="Auto"
-                       HorizontalAlignment="Stretch"
-                       VerticalAlignment="Stretch"
-                       EnableColumnVirtualization="True"
-                       RowIndicatorVisibility="Collapsed"
-                       ShowGroupPanel="False"
-                       AutoGenerateColumns="False"
-                       CanUserFreezeColumns="False"
-                       CanUserInsertRows="False"
-                       CanUserDeleteRows="False"
-                       ValidatesOnDataErrors="InViewMode">
-            <t:RadTreeListView.Columns>
-                <t:GridViewDataColumn Header="Gross"
-                                  DataMemberBinding="{Binding Path=FgtQuantity, Mode=TwoWay}"
-                                  Width="05"
-                                  MinWidth="50"
-                                  IsFilterable="False"
-                                  CellStyleSelector="{StaticResource commodityCellStyleSelector}" />
-                <t:GridViewDataColumn Header="Net"
-                                  DataMemberBinding="{Binding Path=FgtVolume2, Mode=TwoWay}"
-                                  Width="50"
-                                  MinWidth="50"
-                                  IsFilterable="False"
-                                  CellStyleSelector="{StaticResource commodityCellStyleSelector}" />
-            </t:RadTreeListView.Columns>
-        </t:RadTreeListView>
-
+        <t:RadButton x:Name="btnRadWindow" Content="Open RadWindow" Click="btnRadWindow_Click" 
+                     VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" />
     </Grid>
 </Page>
