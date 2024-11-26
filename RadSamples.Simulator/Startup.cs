@@ -1,7 +1,7 @@
 ﻿using OpenSilver.Simulator;
 using System;
 
-namespace RadGridViewIsBusyIndicator.Simulator
+namespace RadSamples.Simulator
 {
     internal static class Startup
     {

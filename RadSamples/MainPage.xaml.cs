@@ -1,21 +1,27 @@
-﻿using RadSamples;
-using System.Windows;
+﻿using System;
 using System.Windows.Controls;
+using Telerik.Windows.Controls;
 
-namespace RadGridViewIsBusyIndicator
+namespace RadSamples
 {
     public partial class MainPage : Page
     {
         public MainPage()
         {
-            DataContext = this;
             InitializeComponent();
         }
 
-        private void btnRadWindow_Click(object sender, RoutedEventArgs e)
+        private void mainRTV_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            var radWindow = new RadWindow1();
-            radWindow.Show();
+            UserControl1 uc1 = mainRTV.FindChildByType<UserControl1>();
+            if (uc1 != null)
+            {
+                Console.WriteLine("FindChildByType Success");
+            }
+            else
+            {
+                Console.WriteLine("FindChildByType Failed");
+            }
         }
     }
 }

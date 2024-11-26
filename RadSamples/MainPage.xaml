@@ -1,26 +1,42 @@
-﻿<Page x:Class="RadGridViewIsBusyIndicator.MainPage"
+﻿<Page x:Class="RadSamples.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:RadGridViewIsBusyIndicator"
+      xmlns:local="clr-namespace:RadSamples"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
       mc:Ignorable="d">
-    <Page.Resources>
-        <Style TargetType="TextBox"
-           t:StyleManager.BasedOn="Office_Blue" />
-        <Style x:Key="TextBoxStyle"
-           TargetType="TextBox"
-           t:StyleManager.BasedOn="Office_Blue" />
-        <Style TargetType="Button"
-           t:StyleManager.BasedOn="Office_Blue" />
-        <Style TargetType="RadioButton"
-           t:StyleManager.BasedOn="Office_Blue" />
-        <Style TargetType="TextBlock"
-           t:StyleManager.BasedOn="Office_Blue" />
-    </Page.Resources>
     <Grid>
-        <t:RadButton x:Name="btnRadWindow" Content="Open RadWindow" Click="btnRadWindow_Click" 
-                     VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" />
+        <telerik:RadTileView x:Name="mainRTV"
+							 Padding="2"
+							 MaximizeMode="One"
+							 Loaded="mainRTV_Loaded"
+							 TileStateChangeTrigger="SingleClick"
+							 ColumnsCount="2"
+							 ColumnWidth="*"
+							 RowHeight="*"
+							 MinimizedColumnWidth="260"
+							 MinimizedRowHeight="*"
+							 ReorderingDuration="0:0:0.2"
+							 ResizingDuration="0:0:0.2"
+							 IsItemDraggingEnabled="False">
+        </telerik:RadTileView>
+        <telerik:RadTileViewItem x:Name="createRequestRTVI"
+						 Header="Parts I am Buying-Create Request"
+						 TileState="Maximized"
+						 Padding="2">
+            <telerik:RadFluidContentControl ContentChangeMode="Manual"
+									State="Large">
+                <telerik:RadFluidContentControl.SmallContent>
+                    <TextBlock Text="" />
+                </telerik:RadFluidContentControl.SmallContent>
+                <telerik:RadFluidContentControl.Content>
+                    <TextBlock Text="" />
+                </telerik:RadFluidContentControl.Content>
+                <telerik:RadFluidContentControl.LargeContent>
+                    <local:UserControl1 />
+                </telerik:RadFluidContentControl.LargeContent>
+            </telerik:RadFluidContentControl>
+        </telerik:RadTileViewItem>
     </Grid>
 </Page>

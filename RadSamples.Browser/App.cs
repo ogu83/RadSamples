@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Routing;
 
-namespace RadGridViewIsBusyIndicator.Browser
+namespace RadSamples.Browser
 {
     public class App : ComponentBase
     {

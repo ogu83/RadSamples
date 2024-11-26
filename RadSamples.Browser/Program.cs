@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RadGridViewIsBusyIndicator.Browser
+namespace RadSamples.Browser
 {
     public class Program
     {
@@ -24,7 +24,7 @@ namespace RadGridViewIsBusyIndicator.Browser
         {
             Application.RunApplication(() =>
             {
-                var app = new RadGridViewIsBusyIndicator.App();
+                var app = new RadSamples.App();
             });
         }
     }
