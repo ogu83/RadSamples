@@ -5,90 +5,26 @@
       xmlns:local="clr-namespace:RadSamples"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-      xmlns:telerikTransitions="clr-namespace:Telerik.Windows.Controls.TransitionEffects;assembly=Telerik.Windows.Controls"
-      xmlns:telerikTransitonControl="clr-namespace:Telerik.Windows.Controls.TransitionControl;assembly=Telerik.Windows.Controls"
       mc:Ignorable="d">
-
     <Page.Resources>
-        <Style TargetType="telerik:RadFluidContentControl" x:Key="RadFluidContentControlStyle">
-            <Setter Property="Transition">
-                <Setter.Value>
-                    <telerikTransitions:FadeTransition/>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="telerik:RadFluidContentControl">
-                        <Grid>
-                            <telerikTransitonControl:LayoutAnimationPanel x:Name="PART_RootElement">
-                                <Border
-                                    BorderBrush="#01000000"
-                                    BorderThickness="1"
-                                    telerikTransitonControl:LayoutAnimationPanel.HeightWeight="0"
-                                    telerikTransitonControl:LayoutAnimationPanel.WidthWeight="0"/>
-                                <telerikTransitonControl:TransitionPresenter 
-                                    Content="{x:Null}"
-                                    ContentTemplate="{x:Null}"
-                                    x:Name="ContentElement"
-                                    Canvas.ZIndex="2"
-                                    Host="{Binding ElementName=PART_RootElement}"
-                                    CurrentContent="{TemplateBinding VisibleContent}"
-                                    CurrentContentTemplate="{TemplateBinding VisibleContentTemplate}"
-                                    Transition="{TemplateBinding Transition}"
-                                    Duration="{TemplateBinding TransitionDuration}"
-                                    telerikTransitonControl:LayoutAnimationPanel.HeightWeight="1"
-                                    telerikTransitonControl:LayoutAnimationPanel.WidthWeight="1"
-                                    telerikTransitonControl:TransitionPresenter.AnimationStretch="None"/>
-                                <Rectangle x:Name="OldContentPresenter"
-                                    Width="{Binding OldVisualWidth, ElementName=ContentElement}"
-                                    Height="{Binding OldVisualHeight, ElementName=ContentElement}"
-                                    Fill="{Binding OldVisualBrush, ElementName=ContentElement}"
-                                    Opacity="0.0"
-                                    Canvas.ZIndex="1"
-                                    telerikTransitonControl:LayoutAnimationPanel.HeightWeight="1"
-                                    telerikTransitonControl:LayoutAnimationPanel.WidthWeight="1"/>
-                            </telerikTransitonControl:LayoutAnimationPanel>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Page.Resources>
     <Grid>
-        <StackPanel>
-            <!--<Button Content="Click" Click="Button_Click" />-->
-            <telerik:RadTileView x:Name="mainRTV"
-							 Padding="2"
-							 MaximizeMode="One"
-							 Loaded="mainRTV_Loaded"
-							 TileStateChangeTrigger="SingleClick"
-							 ColumnsCount="2"
-							 ColumnWidth="*"
-							 RowHeight="*"
-							 MinimizedColumnWidth="260"
-							 MinimizedRowHeight="*"
-							 ReorderingDuration="0:0:0.2"
-							 ResizingDuration="0:0:0.2"
-							 IsItemDraggingEnabled="False">
-                <telerik:RadTileViewItem x:Name="createRequestRTVI"
-						 Header="Parts I am Buying-Create Request"
-						 TileState="Maximized"
-						 Padding="2">
-                    <telerik:RadFluidContentControl ContentChangeMode="Manual"
-									State="Large" Style="{StaticResource RadFluidContentControlStyle}">
-                        <telerik:RadFluidContentControl.SmallContent>
-                            <TextBlock Text="" />
-                        </telerik:RadFluidContentControl.SmallContent>
-                        <telerik:RadFluidContentControl.Content>
-                            <TextBlock Text="" />
-                        </telerik:RadFluidContentControl.Content>
-                        <telerik:RadFluidContentControl.LargeContent>
-                            <local:UserControl1 />
-                        </telerik:RadFluidContentControl.LargeContent>
-                    </telerik:RadFluidContentControl>
-                </telerik:RadTileViewItem>
-            </telerik:RadTileView>
+        <telerik:RadTileView>
+            <telerik:RadTileViewItem Header="First" TileState="Maximized">
+                <telerik:RadFluidContentControl ContentChangeMode="Manual">
 
-        </StackPanel>
+                </telerik:RadFluidContentControl>
+            </telerik:RadTileViewItem>
+            <telerik:RadTileViewItem Header="Second" TileState="Minimized">
+                <telerik:RadFluidContentControl ContentChangeMode="Manual">
+
+                </telerik:RadFluidContentControl>
+            </telerik:RadTileViewItem>
+            <telerik:RadTileViewItem Header="Third" TileState="Minimized">
+                <telerik:RadFluidContentControl ContentChangeMode="Manual">
+
+                </telerik:RadFluidContentControl>
+            </telerik:RadTileViewItem>
+        </telerik:RadTileView>
     </Grid>
 </Page>
