@@ -6,24 +6,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
       mc:Ignorable="d">
-    <Page.Resources>
-    </Page.Resources>
-    <Grid>
+    <Grid x:Name="LayoutRoot">
         <telerik:RadTileView>
-            <telerik:RadTileViewItem Header="First" TileState="Maximized">
-                <telerik:RadFluidContentControl ContentChangeMode="Manual">
-
-                </telerik:RadFluidContentControl>
+            <telerik:RadTileViewItem Header="First" >
+                <TextBlock>Hello First</TextBlock>
             </telerik:RadTileViewItem>
-            <telerik:RadTileViewItem Header="Second" TileState="Minimized">
-                <telerik:RadFluidContentControl ContentChangeMode="Manual">
-
-                </telerik:RadFluidContentControl>
+            <telerik:RadTileViewItem Header="Second">
+                <TextBlock>Hello Second</TextBlock>
             </telerik:RadTileViewItem>
-            <telerik:RadTileViewItem Header="Third" TileState="Minimized">
-                <telerik:RadFluidContentControl ContentChangeMode="Manual">
-
-                </telerik:RadFluidContentControl>
+            <telerik:RadTileViewItem Header="Third" >
+                <TextBlock>Hello Third</TextBlock>
             </telerik:RadTileViewItem>
         </telerik:RadTileView>
     </Grid>

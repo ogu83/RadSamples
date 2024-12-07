@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Telerik.Windows.Controls;
 
 namespace RadSamples
 {
@@ -6,6 +7,8 @@ namespace RadSamples
     {
         public App()
         {
+            System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(RadTileViewItem).TypeHandle);
+            
             this.InitializeComponent();
 
             var mainPage = new MainPage();

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
-    <OpenSilverType>6</OpenSilverType>
+    <OpenSilverType>7</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
     <WasmEnableSIMD>false</WasmEnableSIMD>
     <!-- Uncomment to enable AOT compilation when publishing -->
@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-11-25-163514-8356d38c" />
+    <PackageReference Include="OpenSilver.WebAssembly" Version="3.1.0-preview-2024-11-25-163514-8356d38c" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -22,6 +22,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RadSamples\RadSamples.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interop\" />
   </ItemGroup>
 
 </Project>

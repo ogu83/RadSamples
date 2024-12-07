@@ -19,13 +19,5 @@ namespace RadSamples.Browser
             var host = builder.Build();
             await host.RunAsync();
         }
-
-        public static void RunApplication()
-        {
-            Application.RunApplication(() =>
-            {
-                var app = new RadSamples.App();
-            });
-        }
     }
 }
